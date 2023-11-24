@@ -1,5 +1,6 @@
 NAME = libft.a
-SOURCES = \
+
+SRC = \
 	ft_isalpha.c \
 	ft_isdigit.c \
 	ft_isalnum.c \
@@ -27,33 +28,55 @@ SOURCES = \
 	ft_split.c\
 	ft_memchr.c\
 	ft_memcmp.c\
+	ft_calloc.c\
 	ft_strnstr.c\
 	ft_substr.c\
 	ft_strjoin.c\
+	ft_strtrim.c\
+	ft_strmapi.c\
+	ft_striteri.c
 
-OBJECTS = $(SOURCES:.c=.o)
+SRC_BONUS = \
+	ft_lstnew_bonus.c\
+	ft_lstadd_front_bonus.c\
+	ft_lstadd_back_bonus.c\
+	ft_lstsize_bonus.c\
+	ft_lstlast_bonus.c\
+	ft_lstdelone_bonus.c
+
+OBJ = $(SRC:.c=.o)
+
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 HEAD = libft.h
 AR = ar rc
 
-CC = cc 
-CFLAGS = -Wall -Wextra -Werror
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -g2
 
-$(NAME): $(OBJECTS)
-	$(AR) $(NAME) $(OBJECTS)
-
-
-all : $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I ./ -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(AR) $(NAME) $(OBJ)
+
+bonus: $(OBJ) $(OBJ_BONUS)
+	$(AR) $(NAME) $(OBJ) $(OBJ_BONUS)
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+
+so: bonus
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(SRC_BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJ) $(OBJ_BONUS)
+
+.PHONY: all clean fclean re bonus

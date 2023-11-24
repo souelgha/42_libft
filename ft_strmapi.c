@@ -1,51 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sonouelg <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 13:58:37 by sonouelg          #+#    #+#             */
-/*   Updated: 2023/11/18 13:58:43 by sonouelg         ###   ########.fr       */
+/*   Created: 2023/11/20 14:57:14 by sonouelg          #+#    #+#             */
+/*   Updated: 2023/11/20 15:38:33 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*newstr;
 	unsigned int	i;
-	unsigned int	j;
 
-	if (!s1 && !s2)
-		return (ft_strdup(""));
-	newstr = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	newstr = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (newstr == NULL)
-		return (0);
+		return (NULL);
 	i = 0;
-	j = 0;
-	while (i < ft_strlen(s1))
+	while (s[i] != '\0')
 	{
-		newstr[i] = s1[i];
+		newstr[i] = f(i, s[i]);
 		i++;
 	}
-	while (j < ft_strlen(s2))
-		newstr[i++] = s2[j++];
 	newstr[i] = '\0';
 	return (newstr);
 }
 /*
-#include <stdlib.h>
-#include <stdio.h>
+char uppercase(unsigned int i, char c)
+{
+    if (i % 2 == 0)
+        return toupper(c);
+    else
+        return tolower(c);
+}
 int main(void)
 {
-	char const	*s1 = "";
-	char const	*s2 = "to";
-	char	*newstr;
-
-	newstr = ft_strjoin(s1, s2);
-	printf("newstr=%s\n", newstr);
-	free(newstr);
-	return(0);
-}*/
+	const char *s = "Hello World";
+	char	*s1;
+	s1 = ft_strmapi(s, uppercase);
+	printf("%s\n", s1);
+	return (0);
+}
+*/	

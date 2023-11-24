@@ -6,7 +6,7 @@
 /*   By: sonouelg <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:00:48 by sonouelg          #+#    #+#             */
-/*   Updated: 2023/11/13 14:02:57 by sonouelg         ###   ########.fr       */
+/*   Updated: 2023/11/20 13:31:18 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,23 +37,6 @@ static int	sign_digit(int nbr)
 	return (nbr < 0);
 }
 
-static void	ft_revstr(char *str)
-{
-	char	temp;
-	size_t	i;
-	size_t	size;
-
-	size = ft_strlen((const char *)str);
-	i = 0;
-	while (i < (size / 2))
-	{
-		temp = str[i];
-		str[i] = str[size -1 - i];
-		str[size - 1 - i] = temp;
-		i++;
-	}
-}
-
 char	*ft_itoa(int n)
 {
 	char			*str;
@@ -62,31 +45,32 @@ char	*ft_itoa(int n)
 
 	str = malloc((count_digit(n) + sign_digit(n) + 1) * sizeof(char));
 	if (str == NULL)
-		return (0);
+		return (NULL);
 	if (n == 0)
 		str[n] = '0';
-	i = 0;
 	if (sign_digit(n) == 1)
 	{
 		nb = -n;
-		str[count_digit(n)] = '-';
+		str[0] = '-';
 	}
 	else
 		nb = n;
+	i = 1;
 	while (nb != 0)
 	{		
-		str[i++] = nb % 10 + '0';
+		str[count_digit(n) + sign_digit(n) - i] = nb % 10 + '0';
 		nb = nb / 10;
+		i++;
 	}
-	ft_revstr(str);
+	str[count_digit(n) + sign_digit(n)] = '\0';
 	return (str);
 }
 /*
-#include	<limits.h>	
+#include<limits.h>	
 int	main(void)
 {
-//	int	n = INT_MAX;
-	int n = -14580;
+//	int	n = INT_MIN;
+	int n = 14580;
 	char *str;
 	printf("count=%d\n", count_digit(n));
 	printf("sign=%d\n", sign_digit(n));

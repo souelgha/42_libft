@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sonouelg <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 17:09:45 by sonouelg          #+#    #+#             */
-/*   Updated: 2023/11/20 12:36:47 by sonouelg         ###   ########.fr       */
+/*   Created: 2023/11/20 15:41:50 by sonouelg          #+#    #+#             */
+/*   Updated: 2023/11/20 16:45:47 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
 		i++;
-	return (i);
+	}
 }
 /*
-#include<stdio.h>
-#include<string.h>
-
+void	iter(unsigned int i, char * s) 
+{
+	*s += i;
+}
 int main(void)
 {
-    printf("S=%lld \n", ft_strlen("tototototo"));
-    printf("O=%lld \n", strlen("tototototo"));
-    return (0);
-}
-*/
+	char	*s = "0000000000";
+	ft_striteri(s, iter);
+	printf("s=%s\n", s);
+
+}*/

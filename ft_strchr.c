@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:16:19 by sonouelg          #+#    #+#             */
-/*   Updated: 2023/11/11 16:32:12 by sonouelg         ###   ########.fr       */
+/*   Updated: 2023/11/18 12:20:15 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ char	*ft_strchr(const char *str, int c)
 	}
 	return (0);
 }
+
 /*
 #include<stdio.h>
 #include<string.h>
@@ -41,4 +42,5 @@ int main()
     printf("sonia = %s\n", res1);
      
     return(0);
-}*/
+}
+*/
