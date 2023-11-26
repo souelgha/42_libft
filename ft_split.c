@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonouelg <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 12:23:37 by sonouelg          #+#    #+#             */
-/*   Updated: 2023/11/20 11:40:46 by sonouelg         ###   ########.fr       */
+/*   Updated: 2023/11/25 11:32:08 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static char	*ft_findstr(char const *s, char c, size_t start)
 	size_t	j;
 	char	*segment;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	while (s[start + i] != c && s[start + i] != '\0')
 		i++;
@@ -41,6 +43,11 @@ static size_t	ft_counttab(char const *s, char c)
 
 	i = 0;
 	count = 0;
+	if (!s)
+	{
+		count = 0;
+		return (count);
+	}
 	while (s[i] != '\0')
 	{
 		if (s[i] != c && (s[i +1] == c || s[i +1] == '\0'))

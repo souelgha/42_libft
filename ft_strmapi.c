@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonouelg <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:57:14 by sonouelg          #+#    #+#             */
-/*   Updated: 2023/11/20 15:38:33 by sonouelg         ###   ########.fr       */
+/*   Updated: 2023/11/25 11:17:14 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*newstr;
 	unsigned int	i;
 
+	if (!s)
+		return (ft_strdup(""));
 	newstr = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (newstr == NULL)
 		return (NULL);

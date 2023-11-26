@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 15:41:50 by sonouelg          #+#    #+#             */
-/*   Updated: 2023/11/26 12:42:38 by sonouelg         ###   ########.fr       */
+/*   Created: 2023/11/25 16:47:08 by sonouelg          #+#    #+#             */
+/*   Updated: 2023/11/25 16:47:13 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_lstiter(t_list *lst, void (*f)(void*))
 {
-	unsigned int	i;
+	t_list	*tmp;
 
-	if (!s)
+	if (!lst || !f)
 		return ;
-	i = 0;
-	while (s[i] != '\0')
+	tmp = NULL;
+	while (lst != NULL)
 	{
-		f(i, &s[i]);
-		i++;
+		tmp = lst->next;
+		(*f)(lst->content);
+		lst = tmp;
 	}
+	lst = NULL;
 }
-/*
-void	iter(unsigned int i, char * s) 
-{
-	*s += i;
-}
-int main(void)
-{
-	char	*s = "0000000000";
-	ft_striteri(s, iter);
-	printf("s=%s\n", s);
-
-}*/

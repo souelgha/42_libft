@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonouelg <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 14:00:38 by sonouelg          #+#    #+#             */
-/*   Updated: 2023/11/18 16:53:45 by sonouelg         ###   ########.fr       */
+/*   Updated: 2023/11/25 12:02:50 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strnstr(const char *big, const char *small, size_t n)
 
 	if (small[0] == '\0')
 		return ((char *)big);
+	if (!big && n == 0)
+		return (NULL);
 	i = 0;
 	while (big[i] != '\0' && i < n)
 	{

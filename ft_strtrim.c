@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonouelg <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 17:14:54 by sonouelg          #+#    #+#             */
-/*   Updated: 2023/11/19 11:57:38 by sonouelg         ###   ########.fr       */
+/*   Updated: 2023/11/25 10:59:17 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	size_t	i;
 
-	if (!s1 && !set)
+	if (!s1)
 		return (ft_strdup(""));
+	if (!set)
+		return (ft_strdup(s1));
 	start = ft_startsearch(s1, set);
 	end = ft_endsearch(s1, set);
 	if (start == ft_strlen(s1))
