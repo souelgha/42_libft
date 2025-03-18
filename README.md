@@ -1,8 +1,8 @@
 # lifbt
 premier projet du cursus de l ecole 42 _ Commun Core
 
-# le but est de recoder des fonctions de la librairie C.
-explication des fonctions :
+## le but est de recoder des fonctions de la librairie C.
+### explication des fonctions :
 
 
 isalpha => check si c est un charactere type alphabet. return 1 si vrai.
