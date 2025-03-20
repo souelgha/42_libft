@@ -3,9 +3,9 @@
 
 ## create our own library : our implementation of standard C library functions and some others
 
-## contents :
+# Contents
 
-### libc functions :
+## Libc functions
 - ft_isalpha
 - ft_isdigit  
 - ft_isalnum 
@@ -31,7 +31,7 @@
 - ft_strnstr
 - ft_atoi 
 
-### Additional Functions:
+## Additional Functions:
 
 - ft_putchar_fd: Outputs the character to the specified file descriptor.
 - ft_putstr_fd: Outputs the string to the specified file descriptor.
@@ -47,7 +47,7 @@
 - ft_strmapi: Applies the function f to each character of the string s. A new string is created.
 - ft_striteri: Applies the function ’f’ to each character of the string passed as argument. Each character is passed by address to ’f’ so it can be modified if necessary.
 
-### Bonus Functions (used for list):
+## Bonus Functions (used for list):
 - ft_lstnew: return a new node.
 - ft_lstadd_front: add new node at the beginning of the list.
 - ft_lstsize: return the number of nodes in the list.
