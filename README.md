@@ -37,7 +37,7 @@
 - ft_putstr_fd: Outputs the string to the specified file descriptor.
 - ft_putnbr_fd: Outputs the integer to the specified file descriptor.
   
-  #### Functions with allocated memory
+   ### Functions with allocated memory
 
 - ft_substr : returns a substring from string.
 - ft_strjoin : returns new string which is the result of concatening 2 strings.
