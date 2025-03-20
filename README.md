@@ -1,19 +1,17 @@
 # Libft
 1st project of 42 School.
 
-# create our own library : our implementation of standard C library functions and some others
+## create our own library : our implementation of standard C library functions and some others
 
 ## contents :
 
 ### libc functions :
 
 - ft_isalpha
+- ft_isdigit  
+- ft_isalnum 
 
-- ft_isdigit  => check si c est un digit. return 1 si vrai.
-
-isalnum  => check si c est un charactere de type alphanumerique. return 1 si vrai.
-
-isascii  => check si c est un charactere de type ascii. return 1 si vrai.
+- ft_isascii  => check si c est un charactere de type ascii. return 1 si vrai.
 
 isprint  => check si c est un charactere imprimable. return 1 si vrai.
 
