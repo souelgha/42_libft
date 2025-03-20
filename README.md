@@ -6,67 +6,65 @@
 ## contents :
 
 ### libc functions :
-
 - ft_isalpha
 - ft_isdigit  
 - ft_isalnum 
+- ft_isascii 
+- ft_isprint
+- ft_toupper 
+- ft_tolower
+- ft_strlen
+- ft_memset 
+- ft_bzero 
+- ft_memcpy 
+- ft_memmove
+- ft_memchr
+- ft_memcmp
+- ft_strdup 
 
-- ft_isascii  => check si c est un charactere de type ascii. return 1 si vrai.
+- ft_calloc
+- ft_strlcpy
+- ft_strlcat
+- ft_strchr
+- ft_strrchr  
+- ft_strncmp 
+- ft_strnstr
+- ft_atoi 
 
-isprint  => check si c est un charactere imprimable. return 1 si vrai.
+### Additional Functions:
+
+- ft_putchar_fd: Outputs the character to the specified file descriptor.
+- ft_putstr_fd: Outputs the string to the specified file descriptor.
+- ft_putnbr_fd: Outputs the integer to the specified file descriptor.
+  
+  #### Functions with allocated memory
+
+- ft_substr : returns a substring from string.
+- ft_strjoin : returns new string which is the result of concatening 2 strings.
+- ft_strtrim: returns a copy of ’s1’ with characters from ’set’ removed from the beginning and the end.
+- ft_split: returns an array of strings obtained by splitting ’s’ using the character ’c’ as a delimiter. The array must end with a NULL pointer.
+- ft_itoa: returns a string representing the integer received as an argument.
+- ft_strmapi: Applies the function f to each character of the string s. A new string is created.
+- ft_striteri: Applies the function ’f’ to each character of the string passed as argument. Each character is passed by address to ’f’ so it can be modified if necessary.
+
+### Bonus Functions (used for list):
+- ft_lstnew: return a new node.
+- ft_lstadd_front: add new node at the beginning of the list.
+- ft_lstsize: return the number of nodes in the list.
+- ft_lstlast: return last node of the list.
+- ft_lstadd_back:  add new node at the end of the list.
+- ft_lstdelone: free the node.
+- ft_lstclear: deletes and frees the given node and all its successors.
+- ft_lstiter: iterates through the list ’lst’ and applies the function ’f’ to the content of each node.
+- ft_lstmap: applies the function ’f’ to each node’s content, and creates a new list resulting of the successive applications of the function ’f’.
 
 
-strlen =>  return la longueur de la chaine.
 
 
-memset => modifie n valeurs par le caractere entre en argument.
 
-bzero => mets les n valeurs  a 0.
 
-memcpy => copie une chaine de characteres.
 
-memmove => deplace une chaine sans overflow.
 
-strlcpy => copie une chaine jusqu a n-1 et retourne la longueur de la source (scr).
 
-strlcat => concatene 2 chaines jusqu a n-1 et retourne une longueur .
+  
 
-toupper => converti les minuscules em majuscules.
-
-tolower => convertie les majuscules en minuscules.
-
-strchr => recherche le 1e char demande et retourne la chaine a partir de ce char.
-
-strrchr  => similaire a strchr mais demarre la recherche a partir de la fin.
-
-strncmp => compare 2 chaines et  retourne 0 si elles sont identiques.
-
-strnstr => recherche aiguille dans motte de foin. retourne la chaine de caracteres a partir de l aiguille.
-
-memchr => idem strchr mais avec des voids a caster.
-
-memcmp => idem strcmp avec des void et des casts.
-
-calloc => alloue la memoire en initialisant a zero.
-
-atoi => transforme un char en int.
-
-itoa => converti un entier en char. inverse de atoi.
-
-strdup => copie une chaine avec malloc(allocation de memoire).
-
-substr => retourne la chaine a partir de la position start avec une taille max de len.
-
-strjoin => concatene 2 chaines avec malloc et retourne le resultat des 2 chaines.
-
-strtrim => retire les caracteres specifies dans set au debut et en fin de chaine.
-
-split => retourne un tableau chaines splitees par le char c et fini par un tableau null.
-
-strmapi => applique une fonction a chaque char et cree une nouvelle chaine avec malloc.
-
-striteri => applique une fonction a chaque char et ne renvoie rien.
-
-putchar_fd => idem putchar mais ecrit dans un fichier.
-putstr_fd => idem putstr mais ecrit dans un fichier.
-putnbr_fd => idem putnbr mais ecrit dans un fichier.
