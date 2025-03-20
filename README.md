@@ -1,13 +1,15 @@
-# lifbt
-premier projet du cursus de l ecole 42 _ Commun Core
+# Libft
+1st project of 42 School.
 
-## le but est de recoder des fonctions de la librairie C.
-### explication des fonctions :
+# create our own library : our implementation of standard C library functions and some others
 
+## contents :
 
-isalpha => check si c est un charactere type alphabet. return 1 si vrai.
+### libc functions :
 
-isdigit  => check si c est un digit. return 1 si vrai.
+- ft_isalpha
+
+- ft_isdigit  => check si c est un digit. return 1 si vrai.
 
 isalnum  => check si c est un charactere de type alphanumerique. return 1 si vrai.
 
